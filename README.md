@@ -21,6 +21,12 @@ python export_classifier_asset.py --asset-id projects/YOUR_GCP_PROJECT_ID/assets
 
 After its export task completes, load it in another Earth Engine workflow with `ee.Classifier.load(asset_id)`. This is an Earth Engine asset, not a portable local `joblib` or `pickle` model. The published polygons and scripts let anyone retrain the model in their own project.
 
+The trained classifier from this release is publicly readable at:
+
+```text
+projects/urban-expansion-in-taoyuan/assets/taoyuan_urban_expansion/five_class_rf_2020_v1
+```
+
 ## Reproduce
 
 1. Create a Google Cloud project enabled for Earth Engine and install dependencies:
