@@ -1,0 +1,85 @@
+{
+  "status": "SCORED",
+  "asset_id": "projects/urban-expansion-in-taoyuan/assets/taoyuan_urban_expansion/landcover_2020_baseline",
+  "usable_reference_points": 239,
+  "sampled_asset_points": 239,
+  "candidate_vs_asset_prediction_disagreements": 0,
+  "weighting": "Original candidate-map strata area weights; valid for evaluating the exported map on the same probability sample.",
+  "confusion_counts_rows_asset_map_columns_reference": [
+    [
+      46,
+      1,
+      0,
+      2,
+      1
+    ],
+    [
+      0,
+      45,
+      1,
+      2,
+      1
+    ],
+    [
+      2,
+      16,
+      17,
+      1,
+      9
+    ],
+    [
+      1,
+      6,
+      5,
+      9,
+      27
+    ],
+    [
+      0,
+      5,
+      0,
+      0,
+      42
+    ]
+  ],
+  "area_adjusted_overall_accuracy_five_class": 0.7119983620239825,
+  "per_class_metrics": {
+    "0": {
+      "class_name": "water",
+      "map_precision_users_accuracy": 0.92,
+      "reference_recall_producers_accuracy": 0.5053452736160028
+    },
+    "1": {
+      "class_name": "vegetation",
+      "map_precision_users_accuracy": 0.9183673469387756,
+      "reference_recall_producers_accuracy": 0.6980418974038797
+    },
+    "2": {
+      "class_name": "cropland",
+      "map_precision_users_accuracy": 0.37777777777777777,
+      "reference_recall_producers_accuracy": 0.9330508388054444
+    },
+    "3": {
+      "class_name": "bareland",
+      "map_precision_users_accuracy": 0.1875,
+      "reference_recall_producers_accuracy": 0.11168677946562817
+    },
+    "4": {
+      "class_name": "builtup",
+      "map_precision_users_accuracy": 0.8936170212765958,
+      "reference_recall_producers_accuracy": 0.7073607656416163
+    }
+  },
+  "urban_binary_metrics": {
+    "overall_accuracy": 0.8878978332913201,
+    "builtup_precision": 0.8936170212765958,
+    "builtup_recall": 0.7073607656416163,
+    "builtup_f1": 0.7896544543286476,
+    "area_adjusted_proportions": {
+      "map_nonbuilt_reference_nonbuilt": 0.6774774628506968,
+      "map_nonbuilt_reference_built": 0.08705212260860615,
+      "map_built_reference_nonbuilt": 0.02505004410007419,
+      "map_built_reference_built": 0.21042037044062337
+    }
+  }
+}

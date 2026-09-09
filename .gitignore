@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.py[cod]
+gee-private/
+pipeline_config.json
+config.json
+results/validation_labels_2020.json
+results/validation_labels_2020-*.json
+results/validation_candidates_2020.csv.tmp

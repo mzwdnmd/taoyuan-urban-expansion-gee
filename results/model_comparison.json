@@ -1,0 +1,79 @@
+{
+  "models": [
+    {
+      "model": "exported_five_class_baseline_as_binary",
+      "precision": 0.8936170212765958,
+      "recall": 0.7073607656416163,
+      "f1": 0.7896544543286476,
+      "overall_accuracy": 0.8878978332913201,
+      "areas_km2": {
+        "2014": {
+          "asset_id": "projects/urban-expansion-in-taoyuan/assets/taoyuan_urban_expansion/landcover_2014_baseline",
+          "builtup_km2": 286.6753548332555,
+          "valid_area_km2": 1203.008284256308,
+          "builtup_share_percent": 23.829873707850346
+        },
+        "2020": {
+          "asset_id": "projects/urban-expansion-in-taoyuan/assets/taoyuan_urban_expansion/landcover_2020_baseline",
+          "builtup_km2": 283.36569731188655,
+          "valid_area_km2": 1203.4025500157895,
+          "builtup_share_percent": 23.54704145409768
+        },
+        "2025": {
+          "asset_id": "projects/urban-expansion-in-taoyuan/assets/taoyuan_urban_expansion/landcover_2025_baseline",
+          "builtup_km2": 331.0545205699123,
+          "valid_area_km2": 1203.4025500161954,
+          "builtup_share_percent": 27.509873613402018
+        }
+      },
+      "decision": "KEEP_AS_VALIDATED_2020_BASELINE"
+    },
+    {
+      "model": "binary_random_forest_v1",
+      "precision": 0.7864752191762934,
+      "recall": 0.8660813843724738,
+      "f1": 0.8243609267435881,
+      "overall_accuracy": 0.8902159492948147,
+      "areas_km2": {
+        "2014": {
+          "scene_count": 51,
+          "builtup_km2": 506.4267809928371
+        },
+        "2020": {
+          "scene_count": 47,
+          "builtup_km2": 452.50892934869603
+        },
+        "2025": {
+          "scene_count": 77,
+          "builtup_km2": 506.27871317989474
+        }
+      },
+      "decision": "REJECT_TEMPORAL_INSTABILITY_AND_AREA_OVERPREDICTION"
+    },
+    {
+      "model": "binary_random_forest_v2_dynamic_world_weak_supervision",
+      "precision": 0.7107974630205516,
+      "recall": 0.8955566464284547,
+      "f1": 0.7925517649291963,
+      "overall_accuracy": 0.8605392562179492,
+      "areas_km2": {
+        "2014": {
+          "scene_count": 51,
+          "builtup_km2": 546.3814349055824
+        },
+        "2020": {
+          "scene_count": 47,
+          "builtup_km2": 478.1745245839188
+        },
+        "2025": {
+          "scene_count": 77,
+          "builtup_km2": 539.0401159726596
+        }
+      },
+      "decision": "REJECT_PRECISION_LOSS_TEMPORAL_INSTABILITY_AND_AREA_OVERPREDICTION"
+    }
+  ],
+  "selected": "exported_five_class_baseline_as_binary",
+  "selection_scope": "2020 mapped built-up detection only; no model passed the temporal-change gate.",
+  "next_requirement": "Add Taoyuan-local training data, especially built-up/bare-land boundary cases, then evaluate temporal transfer without tuning on the existing reference set."
+}

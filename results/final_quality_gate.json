@@ -1,0 +1,37 @@
+{
+  "status": "ENGINEERING_PORTFOLIO_READY_MODEL_REVISION_REQUIRED",
+  "validation": {
+    "reference_points_total": 250,
+    "usable_points": 239,
+    "excluded_mixed_or_uncertain": 11,
+    "five_class_overall_accuracy": 0.7119983620239825,
+    "urban_binary_overall_accuracy": 0.8878978332913201,
+    "builtup_precision": 0.8936170212765958,
+    "builtup_recall": 0.7073607656416163,
+    "builtup_f1": 0.7896544543286476
+  },
+  "quality_findings": [
+    {
+      "finding": "The exported map and validation-candidate predictions agree at all 239 usable points.",
+      "decision": "Validation metrics correspond to the delivered 2020 GEE Asset."
+    },
+    {
+      "finding": "Cropland map precision is 37.8%; bare-land precision is 18.8% and recall is 11.2%.",
+      "decision": "Do not present the five-class product as a production-quality land-cover map."
+    },
+    {
+      "finding": "Exported built-up area changes from 286.68 km² in 2014 to 283.37 km² in 2020, then 331.05 km² in 2025.",
+      "decision": "Temporal transfer remains unstable; do not claim a validated expansion magnitude."
+    }
+  ],
+  "resume_safe_claim": "Built a Python–Google Earth Engine workflow for Taoyuan using Landsat 8/9, cloud masking, spectral/terrain features, Random Forest classification, idempotent Asset exports, and stratified independent validation. Labeled 250 map-based reference samples; the delivered 2020 Asset achieved 89.4% built-up precision, 70.7% recall, and 79.0% F1. Automated QA detected mixed-pixel and temporal-transfer limitations.",
+  "next_model_target": {
+    "scope": "Binary built-up versus non-built-up classifier",
+    "reason": "The job-facing project goal is urban expansion; weak cropland/bare-land separation should not dominate it.",
+    "acceptance_checks": [
+      "Re-evaluate on the same independent probability sample without retraining on those labels.",
+      "Improve built-up recall while preserving precision.",
+      "Resolve or explain the 2014-2020 direction conflict before reporting change magnitude."
+    ]
+  }
+}

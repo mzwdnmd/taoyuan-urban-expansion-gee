@@ -1,0 +1,184 @@
+{
+  "reviewed": 25,
+  "changed_count": 16,
+  "unchanged_count": 9,
+  "mixed_after_review": 4,
+  "changes": [
+    {
+      "candidate_id": "TY2020_2",
+      "before": {
+        "reference_class": 2,
+        "review_status": "DONE"
+      },
+      "after": {
+        "reference_class": 0,
+        "review_status": "DONE"
+      }
+    },
+    {
+      "candidate_id": "TY2020_48",
+      "before": {
+        "reference_class": -1,
+        "review_status": "UNCERTAIN"
+      },
+      "after": {
+        "reference_class": 0,
+        "review_status": "DONE"
+      }
+    },
+    {
+      "candidate_id": "TY2020_49",
+      "before": {
+        "reference_class": 3,
+        "review_status": "DONE"
+      },
+      "after": {
+        "reference_class": 0,
+        "review_status": "DONE"
+      }
+    },
+    {
+      "candidate_id": "TY2020_51",
+      "before": {
+        "reference_class": -1,
+        "review_status": "UNCERTAIN"
+      },
+      "after": {
+        "reference_class": -2,
+        "review_status": "MIXED"
+      }
+    },
+    {
+      "candidate_id": "TY2020_52",
+      "before": {
+        "reference_class": -1,
+        "review_status": "UNCERTAIN"
+      },
+      "after": {
+        "reference_class": 1,
+        "review_status": "DONE"
+      }
+    },
+    {
+      "candidate_id": "TY2020_62",
+      "before": {
+        "reference_class": 4,
+        "review_status": "DONE"
+      },
+      "after": {
+        "reference_class": 2,
+        "review_status": "DONE"
+      }
+    },
+    {
+      "candidate_id": "TY2020_76",
+      "before": {
+        "reference_class": 3,
+        "review_status": "DONE"
+      },
+      "after": {
+        "reference_class": 1,
+        "review_status": "DONE"
+      }
+    },
+    {
+      "candidate_id": "TY2020_80",
+      "before": {
+        "reference_class": 2,
+        "review_status": "DONE"
+      },
+      "after": {
+        "reference_class": 4,
+        "review_status": "DONE"
+      }
+    },
+    {
+      "candidate_id": "TY2020_84",
+      "before": {
+        "reference_class": 2,
+        "review_status": "DONE"
+      },
+      "after": {
+        "reference_class": 1,
+        "review_status": "DONE"
+      }
+    },
+    {
+      "candidate_id": "TY2020_91",
+      "before": {
+        "reference_class": 4,
+        "review_status": "DONE"
+      },
+      "after": {
+        "reference_class": 1,
+        "review_status": "DONE"
+      }
+    },
+    {
+      "candidate_id": "TY2020_97",
+      "before": {
+        "reference_class": 2,
+        "review_status": "DONE"
+      },
+      "after": {
+        "reference_class": 3,
+        "review_status": "DONE"
+      }
+    },
+    {
+      "candidate_id": "TY2020_99",
+      "before": {
+        "reference_class": 1,
+        "review_status": "DONE"
+      },
+      "after": {
+        "reference_class": 3,
+        "review_status": "DONE"
+      }
+    },
+    {
+      "candidate_id": "TY2020_105",
+      "before": {
+        "reference_class": -1,
+        "review_status": "UNCERTAIN"
+      },
+      "after": {
+        "reference_class": 1,
+        "review_status": "DONE"
+      }
+    },
+    {
+      "candidate_id": "TY2020_109",
+      "before": {
+        "reference_class": -1,
+        "review_status": "UNCERTAIN"
+      },
+      "after": {
+        "reference_class": -2,
+        "review_status": "MIXED"
+      }
+    },
+    {
+      "candidate_id": "TY2020_110",
+      "before": {
+        "reference_class": 2,
+        "review_status": "DONE"
+      },
+      "after": {
+        "reference_class": -2,
+        "review_status": "MIXED"
+      }
+    },
+    {
+      "candidate_id": "TY2020_111",
+      "before": {
+        "reference_class": 4,
+        "review_status": "DONE"
+      },
+      "after": {
+        "reference_class": -2,
+        "review_status": "MIXED"
+      }
+    }
+  ]
+}

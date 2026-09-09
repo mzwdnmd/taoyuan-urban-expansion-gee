@@ -1,0 +1,98 @@
+{
+  "status": "SCORED",
+  "sample_design": "Stratified by mapped class; 300 m exclusion from training polygons.",
+  "usable_points": 239,
+  "excluded_uncertain_or_mixed_points": 11,
+  "confusion_counts_rows_map_columns_reference": [
+    [
+      46,
+      1,
+      0,
+      2,
+      1
+    ],
+    [
+      0,
+      45,
+      1,
+      2,
+      1
+    ],
+    [
+      2,
+      16,
+      17,
+      1,
+      9
+    ],
+    [
+      1,
+      6,
+      5,
+      9,
+      27
+    ],
+    [
+      0,
+      5,
+      0,
+      0,
+      42
+    ]
+  ],
+  "area_adjusted_overall_accuracy": 0.7119983620239819,
+  "overall_accuracy_95_percent_ci": [
+    0.6501776886513597,
+    0.7738190353966041
+  ],
+  "per_class_metrics": {
+    "0": {
+      "class_name": "water",
+      "map_precision_users_accuracy": 0.92,
+      "reference_recall_producers_accuracy": 0.5053452736160025
+    },
+    "1": {
+      "class_name": "vegetation",
+      "map_precision_users_accuracy": 0.9183673469387755,
+      "reference_recall_producers_accuracy": 0.6980418974038795
+    },
+    "2": {
+      "class_name": "cropland",
+      "map_precision_users_accuracy": 0.3777777777777778,
+      "reference_recall_producers_accuracy": 0.9330508388054444
+    },
+    "3": {
+      "class_name": "bareland",
+      "map_precision_users_accuracy": 0.1875,
+      "reference_recall_producers_accuracy": 0.11168677946562816
+    },
+    "4": {
+      "class_name": "builtup",
+      "map_precision_users_accuracy": 0.8936170212765957,
+      "reference_recall_producers_accuracy": 0.7073607656416161
+    }
+  },
+  "area_adjusted_class_area_km2": {
+    "0": 38.577166371044235,
+    "1": 604.1230026565582,
+    "2": 170.1569148725711,
+    "3": 32.56630942107613,
+    "4": 357.97915669519034
+  },
+  "urban_binary_metrics": {
+    "definition": "Built-up class 4 versus classes 0-3.",
+    "area_adjusted_proportions": {
+      "map_nonbuilt_reference_nonbuilt": 0.6774774628506964,
+      "map_nonbuilt_reference_built": 0.08705212260860615,
+      "map_built_reference_nonbuilt": 0.02505004410007419,
+      "map_built_reference_built": 0.2104203704406232
+    },
+    "overall_accuracy": 0.8878978332913197,
+    "builtup_precision": 0.8936170212765957,
+    "builtup_recall": 0.7073607656416161,
+    "builtup_f1": 0.7896544543286474,
+    "mapped_builtup_area_km2": 283.36569731170346,
+    "reference_adjusted_builtup_area_km2": 357.97915669519034
+  },
+  "review_warning": "Inspect ambiguous points and document imagery/date rules before using these figures in a portfolio."
+}

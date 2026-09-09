@@ -1,0 +1,33 @@
+{
+  "source": "exported_gee_assets",
+  "years": {
+    "2014": {
+      "asset_id": "projects/urban-expansion-in-taoyuan/assets/taoyuan_urban_expansion/landcover_2014_baseline",
+      "builtup_km2": 286.6753548332555,
+      "valid_area_km2": 1203.008284256308,
+      "builtup_share_percent": 23.829873707850346
+    },
+    "2020": {
+      "asset_id": "projects/urban-expansion-in-taoyuan/assets/taoyuan_urban_expansion/landcover_2020_baseline",
+      "builtup_km2": 283.36569731188655,
+      "valid_area_km2": 1203.4025500157895,
+      "builtup_share_percent": 23.54704145409768
+    },
+    "2025": {
+      "asset_id": "projects/urban-expansion-in-taoyuan/assets/taoyuan_urban_expansion/landcover_2025_baseline",
+      "builtup_km2": 331.0545205699123,
+      "valid_area_km2": 1203.4025500161954,
+      "builtup_share_percent": 27.509873613402018
+    }
+  },
+  "intervals": {
+    "2014_2020": {
+      "absolute_change_km2": -3.3096575213689334,
+      "relative_change_percent": -1.1544967035251403
+    },
+    "2020_2025": {
+      "absolute_change_km2": 47.688823258025764,
+      "relative_change_percent": 16.82942703030743
+    }
+  }
+}

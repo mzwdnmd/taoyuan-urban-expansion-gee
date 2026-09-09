@@ -1,0 +1,16 @@
+{
+  "project": "YOUR_GCP_PROJECT_ID",
+  "asset_root": "projects/YOUR_GCP_PROJECT_ID/assets/taoyuan_urban_expansion",
+  "boundary_dataset": "WM/geoLab/geoBoundaries/600/ADM1",
+  "boundary_field": "shapeName",
+  "boundary_value": "Taoyuan",
+  "years": [2014, 2020, 2025],
+  "training_year": 2020,
+  "max_cloud_cover": 80,
+  "train_fraction": 0.7,
+  "max_training_pixels_per_class": 1200,
+  "max_validation_pixels_per_class": 500,
+  "validation_points_per_class": 50,
+  "validation_exclusion_buffer_m": 300,
+  "random_seed": 42
+}
