@@ -2,6 +2,30 @@
 
 An open Python/Google Earth Engine workflow for mapping urban land cover in Taoyuan, Taiwan with Landsat 8/9. The repository includes the manually drawn training polygons, a 250-point reference sample, automated GEE processing scripts, and quality-control results.
 
+[简体中文说明](README.zh-CN.md)
+
+## Project workflow
+
+~~~mermaid
+flowchart LR
+    A[Landsat 8/9 Collection 2 L2] --> B[Cloud and saturation masking]
+    B --> C[Annual composite and predictors]
+    D[93 training polygons] --> E[Sample pixels and balance classes]
+    C --> E
+    E --> F[300-tree Random Forest]
+    F --> G[2020 land-cover Asset and saved Classifier]
+    G --> H[250 independent reference points]
+    H --> I[Accuracy metrics and quality gate]
+~~~
+
+1. **Configure and authenticate.** A user supplies a Google Cloud project and authenticates their own Earth Engine account. No credentials are stored in this repository.
+2. **Build predictor imagery.** The workflow filters Landsat 8/9 Collection 2 Level 2 scenes, masks cloud and saturation flags, applies reflectance scaling, and creates annual median composites. Predictors include six optical bands, NDVI, NDBI, MNDWI, BSI, NDVI percentiles/range, elevation, and slope.
+3. **Create training data.** The five land-cover classes are water, vegetation, cropland, bare land, and built-up. The repository publishes all 93 manually delineated polygons as GeoJSON, with class counts documented in [data/TRAINING_DATA.md](data/TRAINING_DATA.md).
+4. **Train the classifier.** Polygons are split by class into training and internal validation sets. Sampled pixels are balanced by class and used to train a seeded 300-tree GEE Random Forest.
+5. **Export outputs.** The workflow writes classified maps and statistics as Earth Engine Assets. The export_classifier_asset.py script saves the trained Random Forest as a reusable GEE Classifier Asset.
+6. **Independently validate the delivered map.** A separate, map-stratified set of 250 human-interpreted 2020 reference points is kept out of training. Eleven mixed or unclear 30 m pixels are excluded, leaving 239 usable points.
+7. **Apply a quality gate.** The project reports independent accuracy metrics and checks temporal consistency before accepting multi-year outputs. The current multi-year series failed that gate, so this repository does not claim a validated 2014–2025 urban-expansion magnitude.
+
 ## What is included
 
 - Landsat 8/9 preprocessing, spectral indices, terrain features, Random Forest training, GEE Asset export, and area-statistics scripts.
