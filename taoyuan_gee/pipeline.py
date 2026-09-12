@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+import json
+from pathlib import Path
+
 import ee
 
 
@@ -119,6 +122,28 @@ def load_samples(asset_root: str) -> ee.FeatureCollection:
         )
         merged = merged.merge(source)
     return merged
+
+
+def load_samples_geojson(path: str | Path) -> ee.FeatureCollection:
+    """Load public local training polygons without requiring GEE table assets."""
+    source = json.loads(Path(path).read_text(encoding="utf-8"))
+    features = []
+    for index, item in enumerate(source.get("features", [])):
+        properties = item.get("properties", {})
+        if properties.get("landcover") is None:
+            raise ValueError(f"Missing landcover property in feature {index}")
+        features.append(
+            ee.Feature(
+                item["geometry"],
+                {
+                    "landcover": int(properties["landcover"]),
+                    "sample_id": str(properties.get("sample_id", index)),
+                },
+            )
+        )
+    if not features:
+        raise ValueError(f"No GeoJSON features found in {path}")
+    return ee.FeatureCollection(features)
 
 
 def split_polygons(

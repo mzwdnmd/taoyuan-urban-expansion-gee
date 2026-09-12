@@ -7,3 +7,4 @@ config.json
 results/validation_labels_2020.json
 results/validation_labels_2020-*.json
 results/validation_candidates_2020.csv.tmp
+results/pipeline_run_latest.json

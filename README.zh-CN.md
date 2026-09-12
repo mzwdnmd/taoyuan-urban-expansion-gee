@@ -36,6 +36,17 @@ flowchart LR
 - data/validation_reference_2020.csv：250 个独立人工判读参考点。
 - results/：独立验证、模型比较和质量门结果。
 - export_classifier_asset.py：导出 GEE 分类器资产的脚本。
+- HARD_CASE_SAMPLING_PLAN.md：困难地区样本增加方案。
+
+## 一条命令复现
+
+完成一次账号认证后，可以直接使用仓库中的训练 GeoJSON，不再需要手动拆分或上传五个 GEE 训练资产：
+
+~~~powershell
+python run_pipeline.py --project YOUR_GCP_PROJECT_ID
+~~~
+
+这条命令会读取 data/training_polygons.geojson，重建固定随机种子的 300 棵树随机森林，计算内部留出检查，自动启动分类器和 2014/2020/2025 分类图导出，并将本次运行摘要保存到 results/pipeline_run_latest.json。使用 --skip-exports 可以只训练并检查指标，不启动导出任务。
 
 ## 已导出的预训练模型
 
@@ -71,9 +82,7 @@ classifier = ee.Classifier.load(
    .venv/Scripts/python gee_connect.py --authenticate
    ~~~
 
-4. 将 pipeline_config.example.json 复制为 pipeline_config.json，并填写自己的项目 ID。
-5. 按 landcover 属性将 data/training_polygons.geojson 中的五个类别上传到 GEE Assets。脚本默认查找 samples_water、samples_vegetation、samples_cropland、samples_bareland 和 samples_builtup。
-6. 运行 run_training.py、run_multiyear.py 与 quality_check.py。
+4. 运行上面的一条命令。run_training.py 和 run_multiyear.py 仍保留给已经使用五个独立 GEE 训练资产的高级工作流。
 
 ## 当前验证结果与限制
 

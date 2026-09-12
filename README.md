@@ -35,6 +35,18 @@ flowchart LR
 
 No OAuth credentials, private keys, local cache files, or user-specific credential paths are included.
 
+The repository also includes HARD_CASE_SAMPLING_PLAN.md, which defines the next sampling round for difficult land-cover boundaries.
+
+## One-command reproduction
+
+After the one-time authentication step, the public training GeoJSON can be used directly; no manual split or upload of five GEE sample Assets is required:
+
+~~~powershell
+python run_pipeline.py --project YOUR_GCP_PROJECT_ID
+~~~
+
+This command reads data/training_polygons.geojson, rebuilds the seeded 300-tree Random Forest, computes an internal holdout check, starts idempotent exports for the classifier and 2014/2020/2025 maps, and saves a local run summary to results/pipeline_run_latest.json. Use --skip-exports for a smoke test that only trains and reports metrics.
+
 ## Saved Earth Engine classifier
 
 The five-class 300-tree Random Forest can be saved as an Earth Engine Classifier asset:
@@ -68,9 +80,7 @@ projects/urban-expansion-in-taoyuan/assets/taoyuan_urban_expansion/five_class_rf
 
 3. Copy `pipeline_config.example.json` to `pipeline_config.json` and replace `YOUR_GCP_PROJECT_ID`.
 
-4. Upload the five classes from `data/training_polygons.geojson` to your Earth Engine Asset folder using the class values in the `landcover` property. The scripts expect Assets named `samples_water`, `samples_vegetation`, `samples_cropland`, `samples_bareland`, and `samples_builtup`.
-
-5. Run `run_training.py`, `run_multiyear.py`, and `quality_check.py`.
+4. Run the one-command pipeline above. The older run_training.py and run_multiyear.py scripts remain available for workflows that already use separate GEE sample Assets.
 
 ## Validation result and limits
 
